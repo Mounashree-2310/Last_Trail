@@ -22,7 +22,7 @@ jobs:
           subject: Pull Request Notification
 
           to: Mounashree.R@Ltts.com
-          from:Mounashree.R@Ltts.com 
+          from: Mounashree.R@Ltts.com 
 
           body: |
             Pull Request Event Triggered
