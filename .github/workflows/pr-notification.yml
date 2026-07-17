@@ -1,0 +1,35 @@
+name: PR Email Notification
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send Email
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.office365.com
+          server_port: 587
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+
+          subject: Pull Request Notification
+
+          to: Mounashree.R@Ltts.com
+          from:Mounashree.R@Ltts.com 
+
+          body: |
+            Pull Request Event Triggered
+
+            Repository: ${{ github.repository }}
+            PR Title: ${{ github.event.pull_request.title }}
+            Author: ${{ github.actor }}
+
+            PR URL:
+            ${{ github.event.pull_request.html_url }}
