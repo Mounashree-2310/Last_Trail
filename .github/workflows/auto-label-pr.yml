@@ -17,4 +17,4 @@ jobs:
       - name: Add Label
         uses: actions-ecosystem/action-add-labels@v1
         with:
-          labels: needs-review
+          labels: needs-review_
