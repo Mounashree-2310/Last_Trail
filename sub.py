@@ -1,3 +1,4 @@
-def sub(a,b):
-  return a-b
-sub(87,83)
+def sub(a, b):
+    return a - b
+
+print(sub(87, 85))
